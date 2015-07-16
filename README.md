@@ -1,6 +1,7 @@
 # jquery-underscore-template
 
 [![Join the chat at https://gitter.im/peraferrer/jquery-underscore-template](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/peraferrer/jquery-underscore-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 jQuery plugin template to apply Underscore
 
 Tiene como dependencia Underscore, deberemos incluirlo en nuestro proyecto junto a jQuery.
