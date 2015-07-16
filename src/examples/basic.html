@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <title>Basic example</title>
+
+    <!-- jQuery -->
+    <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+
+    <!-- Underscore -->
+    <script type='text/javascript' src='http://underscorejs.org/underscore-min.js'></script>
+
+    <!-- jQuery Underscore Tempalte -->
+    <script type='text/javascript' src='../jquery-undescore-template.js'></script>
+
+    <!-- Templates -->
+    <link rel="import" href="../template/tmpl-basic.html">
+
+</head>
+<body>
+
+    <div id="ppp"></div>
+
+</body>
+</html>
+
+<script>
+
+    $(document).ready(function() {
+        var _finish = false;
+
+        setTimeout(function() {
+            _finish = true;
+        }, 1000);
+
+        var _repeat = function(el) {
+
+            $(el).template('myTemplate', {title: _.uniqueId('Template ')})
+                .done(function() {
+                    if (!_finish) {
+                        _repeat(el);
+                    }
+                });
+        };
+
+        $('#ppp').template('myTemplate', {title: 'Prueba Template'})
+            .done(_repeat)
+            .fail(function(el) {
+                console.log(el);
+            })
+    });
+
+</script>
