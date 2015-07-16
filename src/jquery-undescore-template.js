@@ -3,7 +3,7 @@
  */
 
 (function($){
-    var _nfTemplateCache = {};
+    var _jutTemplateCache = {};
 
     /**
      * Se encarga de recuperar el template
@@ -22,7 +22,7 @@
 
             if (_tmpl) {
                 template = $(_tmpl).html();
-                _nfTemplateCache[id] = template;
+                _jutTemplateCache[id] = template;
             }
         });
 
@@ -42,7 +42,7 @@
         var df = $.Deferred();
 
         // Intentamos cargar el tempalte cacheado
-        var template = _nfTemplateCache[id];
+        var template = _jutTemplateCache[id];
 
         // Verificamos si el template se encuentre cacheado sino lo buscamos
         if (!template) {
